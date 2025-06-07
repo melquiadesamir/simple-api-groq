@@ -22,6 +22,9 @@ export const POST: APIRoute = async ({request}) => {
       {
         status: 200,
         headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'POST',
+          'Access-Control-Allow-Headers': 'Content-Type',
           'Content-Type': 'application/json',
         },
       }
@@ -34,10 +37,7 @@ export const POST: APIRoute = async ({request}) => {
       }),
       {
         status: 500,
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': 'POST',
-          'Access-Control-Allow-Headers': 'Content-Type', 
+        headers: { 
           'Content-Type': 'application/json',
 
         },
