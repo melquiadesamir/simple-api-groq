@@ -2,7 +2,7 @@ import { APIRoute } from "astro"
 import Grop from "groq-sdk"
 
 // const groq = new Grop({ apiKey: process.env.groq_api_key})
-const groq = new Grop({ apiKey: import.meta.env.groq_api_key})
+const groq = new Grop({ apiKey: import.meta.env.GROQ_API_KEY})
 
 export const POST: APIRoute = async ({request}) => {
   try {
@@ -22,7 +22,7 @@ export const POST: APIRoute = async ({request}) => {
       {
         status: 200,
         headers: {
-          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Origin': `${import.meta.env.URL_MAIN_PAGE}`,
           'Access-Control-Allow-Methods': 'POST',
           'Access-Control-Allow-Headers': 'Content-Type',
           'Content-Type': 'application/json',
